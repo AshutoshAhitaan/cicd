@@ -2,8 +2,8 @@ name: calculator-publish-image
 on:
   pull_request:
     types: [opened]
-  branches:
-    - 'main'
+    branches:
+      - 'main'
 
 jobs:
   publish-image:
