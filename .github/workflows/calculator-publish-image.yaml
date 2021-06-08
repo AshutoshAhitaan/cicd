@@ -1,0 +1,15 @@
+name: calculator-publish-image
+on:
+  pull_request:
+    types: [opened]
+  branches:
+    - 'main'
+
+jobs:
+  publish-image:
+    name: publish image to docker repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'publish image'
+        run: echo 'publish image' 
