@@ -1,0 +1,28 @@
+name: calculator-build-test-workflow
+on:
+  push:
+    branches:
+      - 'feature-id001-ashutosh'
+
+jobs:
+  build-test:
+    name: install python and do unit testing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check branch
+        uses: actions/checkout@v2
+        with:
+          repository : 'AshutoshAhitaan/cicd'
+
+      - name: install python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: unit testing
+        run: |
+          cd control
+          python -m pytest -v -s ../unit-test
+
+      
